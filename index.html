@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <div id="index"> </div>
     <div id="preview"> </div>
     <script src="javascripts/markdown.js"></script>
     <script src="javascripts/zepto.min.js"></script>
     <script>
-      var site='https://dl.dropboxusercontent.com/u/140220826/'
-      $.get(site+'hello.md', function(response){
+    var site='https://dl.dropboxusercontent.com/u/140220826/'
+    function mdClick(){
+        url=$(this).attr("href")
+        if(url.indexOf('.md')>0){
+            load(url)
+            return false
+        }
+    }
+    function load(file){        
+        $.get(site+file, function(response){
+          $('#preview').empty()
           $('#preview').append(markdown.toHTML(response))
-      })
+          $('a').click(mdClick)
+          window.location.hash=file
+        })
+    }
+    function index(file){        
+        $.get(site+file, function(response){
+          $('#index').empty()
+          $('#index').append(markdown.toHTML(response))
+          $('a').click(mdClick)
+        })
+    }
+    index('index.md')
     </script>
   </body>
 </html>
