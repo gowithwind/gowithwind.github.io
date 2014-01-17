@@ -5,7 +5,8 @@
     <script src="javascripts/markdown.js"></script>
     <script src="javascripts/zepto.min.js"></script>
     <script>
-      $.get('hello.md', function(response){
+      var site='http://gowithwind.github.io/'
+      $.get(site+'hello.md', function(response){
           $('#preview').append(markdown.toHTML(response))
       })
     </script>
