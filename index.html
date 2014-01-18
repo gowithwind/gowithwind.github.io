@@ -208,6 +208,7 @@
     setInterval(function() {
        newhash=window.location.hash.substring(1)
        if(newhash!=oldhash) {
+          oldhash=newhash
           load(newhash);
        }
     }, 500/*whatever*/);
