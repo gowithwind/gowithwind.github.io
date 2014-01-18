@@ -1,11 +1,188 @@
+
 <!DOCTYPE html>
-<html>
-  <body>
-    <div id="index"> </div>
-    <div id="preview"> </div>
-    <script src="javascripts/markdown.js"></script>
-    <script src="javascripts/zepto.min.js"></script>
-    <script>
+<html lang="en">
+
+<! -- header.html -->
+<meta charset="utf-8">
+<title>Gowithwind</title>
+
+<meta name="author" content="pigpig">
+
+<!-- Enable responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+<!--[if lt IE 9]>
+ <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Le styles -->
+<link href="assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="assets/resources/syntax/syntax.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+
+
+<! -- header.html end -->
+
+
+   <body>
+   		<nav class="navbar navbar-default visible-xs" role="navigation">
+		  <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			  <span class="sr-only">Toggle navigation</span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/gowithwind">
+		      <i class="fa fa-github"></i>
+		    </a>
+		    
+		    
+		    <a type="button" class="navbar-toggle nav-link" href="http://twitter.com/smilelinlin">
+		      <i class="fa fa-twitter"></i>
+		    </a>
+		    
+		    
+		    <a type="button" class="navbar-toggle nav-link" href="mailto:">
+		      <i class="fa fa-envelope"></i>
+		    </a>
+		    
+			<a class="navbar-brand" href="http://gowithwind.github.io/">
+				<img src="http://www.gravatar.com/avatar/726351295ec82e145928582f595aa3aa?s=35" class="img-circle" />
+				dbyll
+			</a>
+		  </div>
+
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+			  <li class="active"><a href="index.md">Home</a></li>
+			  <li><a href="aboutme.md">About Me</a></li>
+			</ul>
+		  </div><!-- /.navbar-collapse -->
+		</nav>
+
+       <!-- nav-menu-dropdown -->
+       <div class="btn-group" id="nav-menu">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="index.md"><i class="fa fa-home"></i> Home</a></li>
+              <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-arrow-up"></i> Top of Page</a></li>
+          </ul>
+       </div>
+
+		<div class="col-sm-3 sidebar hidden-xs">
+			<! -- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="http://gowithwind.github.io/">
+		<img src="http://www.gravatar.com/avatar/726351295ec82e145928582f595aa3aa?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="http://gowithwind.github.io/">gowithwind</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	Your stylish, minimalist theme!
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="http://gowithwind.github.io/">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/smilelinlin">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		<!--
+		<li>
+			<a class="btn btn-default btn-sm" href="https://pinterest.com/asd123">
+				<i class="fa fa-pinterest fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/asd123">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="http://dbtek.github.io/dbyll/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+        -->
+	</ul>
+</div>
+
+	
+
+<! -- sidebar.html end -->
+
+		</div>
+
+		<div class="col-sm-9 col-sm-offset-3">
+			<article>
+
+
+	<div class="col-sm-10">
+	  <div class="article_body">
+	  
+	  </div>
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+			<!-- footer.html -->
+<footer>
+ <hr/>
+ <p>
+ 	&copy; 2014 gowithwind with pigpig. Source Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+ </p>
+</footer>
+
+<!-- footer.html end -->
+
+
+		</div>
+
+    <script type="text/javascript" src="assets/js/markdown.js"></script>
+    <script type="text/javascript" src="assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+	<script>
     var site='https://dl.dropboxusercontent.com/u/140220826/'
     function mdClick(){
         url=$(this).attr("href")
@@ -14,22 +191,39 @@
             return false
         }
     }
-    function load(file){        
+    
+    function load(file){
+        console.log('load:'+file)
         $.get(site+file, function(response){
-          $('#preview').empty()
-          $('#preview').append(markdown.toHTML(response))
+          $('.article_body').empty()
+          $('.article_body').append(markdown.toHTML(response))
           $('a').click(mdClick)
           window.location.hash=file
+          oldhash=file
         })
     }
-    function index(file){        
-        $.get(site+file, function(response){
-          $('#index').empty()
-          $('#index').append(markdown.toHTML(response))
-          $('a').click(mdClick)
-        })
-    }
-    index('index.md')
+    var oldhash=window.location.hash.substring(1)
+    if(oldhash.length<1){load('index.md')}else load(oldhash)
+    //simple solution for history
+    setInterval(function() {
+       newhash=window.location.hash.substring(1)
+       if(newhash!=oldhash) {
+          load(newhash);
+       }
+    }, 500/*whatever*/);
     </script>
-  </body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-28936863-2', 'gowithwind.github.io');
+      ga('send', 'pageview');
+
+    </script>
+   </body>
+
 </html>
+
+
