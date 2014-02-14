@@ -1,0 +1,380 @@
+/*
+Site Name: Janet Wagner | Web Development and Design Portfolio | Resume 
+Site URI: http://www.WebCodePro.net/resume/resume-v2.html
+Description: Hand coded HTML5, CSS, W3C Valid Markup, Includes Microdata (Schema.org).
+Version: 2.0
+Author: Janet Wagner
+Author URI:  http://www.WebCodePro.net/
+*/
+
+
+/*  Color Reference
+---------------------------------------------------
+
+Blue: #66ccff
+Green: #246b00
+
+*/
+
+
+
+/* Default Styles
+--------------------------------------------------- */
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: url("crosshatch-tile-336699-mult.jpg");  
+	background-color: inherit;
+	font-size: 16px; 
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #000;
+}
+
+a:link { 
+	text-decoration: underline;
+	color: #246b00;
+	font-weight: bold;
+}
+
+a:visited { 
+	text-decoration: underline;
+	color: #246b00;
+	font-weight: bold;
+}
+
+a:hover { 
+	text-decoration: underline;
+	color: #000;
+	font-weight: bold;
+}
+
+a:active { 
+	text-decoration: underline;
+	color: #000;
+	font-weight: bold;
+}
+
+#wrapper-resume-v2	{
+	width: 965px;
+	margin: 0 auto;	
+}
+
+#content {
+	background: url("ui-bg_e5e5e5_60x60_m.png");  
+	width: 960px;
+	text-align: left;
+	overflow: auto;
+	position: relative;
+}
+
+.clear	{
+	float: none;
+	clear: both;
+	margin: 20px 0px 20px 0px;
+}
+
+.clear_header	{
+	float: none;
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+	height: 2px;
+}
+
+
+
+
+/* Header
+--------------------------------------------------- */
+
+#header_bar  {
+	float: none;
+	margin: 0px; 
+	background: url("crosshatch-tile-000000.jpg"); 
+	width: 100%;
+	height: 40px;
+	color: #fff;
+	line-height: 40px;
+	font-size: 14px;
+}
+
+#header_bar ul	{
+	float: right;
+	margin: 0px 10px 0px 0px;
+	padding: 0px;
+}
+
+#header_bar li { 
+	margin: 0px; 
+	padding: 0px 5px 0px 5px; 
+	list-style-type: none; 
+	display: inline; 
+}
+
+#header_bar li a	{
+	color: #fff;
+	text-decoration: underline;
+	font-weight: normal;
+}
+
+#header_bar li a:hover	{
+	color: #66ccff;
+	font-weight: normal;
+}
+
+#header_bar  ul.icons	{
+	float: left;
+	margin: 7px 0px 0px 0px;
+	padding: 0px;
+}
+
+#header_bar .icons li { 
+	margin: 0px 0px 0px 2px; 
+	padding: 0px; 
+	list-style-type: none; 
+	display: inline; 
+}
+
+img	{
+	border: 0px;
+}
+
+#contact-details .logo	{
+	float: left;
+	background: url("name-logo-bg.png");  
+	background-repeat: no-repeat;
+	width: 500px;
+	height: 288px;
+	margin: 0px;
+}
+
+#contact-details .logo	h1 {
+	font-size: 36px;
+	font-style: italic;
+	line-height: 282px;
+	margin: 0px 0px 0px 150px;
+}
+
+#contact-details  .contact-type	{
+	float: left;
+	margin: 0px 0px 15px 75px;
+	font-size: 16px;
+}
+
+#contact-details  .contact-title	{
+	float: left;
+	margin: 40px 0px 30px 35px;
+	width: 390px;
+	font-size: 28px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+#contact-details  h4	{
+	margin: 0px 0px 0px 40px;
+	font-size: 28px;
+	font-weight: bold;
+	font-style: italic;
+	width: 350px;
+}
+
+
+
+/* Main Content
+--------------------------------------------------- */
+
+h2.top	{
+	margin: 0px; 
+	font-size: 22px;
+	font-weight: bold;
+}
+
+h2	{
+	margin: 40px 0px 0px 0px; 
+	font-size: 22px;
+	font-weight: bold;
+}
+
+
+dl	{
+	margin: 0px 50px 0px 0px;
+}
+
+
+dt	{
+	float: left;
+	width: 200px;
+	font-size: 20px;
+	font-weight: bold;
+	font-style: italic;
+	text-align: right;
+}
+
+dd	{
+	width: 620px; 
+	float: right;
+	margin-right: 20px;
+}
+
+dl#contact 	{
+	margin: 0px;
+}
+
+dt#contact 	{
+	margin: 0px;
+}
+
+dd#contact 	{
+	margin: 0px;
+}
+
+#profile	{
+	width: 600px;
+}
+
+#profile p	{
+	margin: 0px;
+}
+
+p.bus1	{
+	margin: 0px;
+	font-weight: bold;
+	color: #246b00;
+}
+
+p.org-edu	{
+	margin: 10px 0px 0px 0px;
+	font-weight: bold;
+	color: #246b00;
+}
+
+p.org-edu a	{
+	color: #246b00;
+}
+
+p.org-edu a:hover	{
+	color: #000;
+}
+
+p.time, p.locality	{
+	margin: 0px;
+}
+
+p.summary	{
+	margin: 10px 0px 0px 0px;
+}
+
+#skills ul.list1	{
+	float: left;
+	display: inline;
+	margin: 0px 0px 0px 15px;
+	padding: 0px;	
+	list-style-image: url("bullet_blue2_n.png"); 
+	width: 220px;
+}
+
+#skills ul.list2	{
+	float: left;
+	display: inline;
+	margin: 0px;
+	padding: 0px;	
+	list-style-image: url("bullet_blue2_n.png"); 
+	width: 180px;
+}
+
+#skills ul.list3	{
+	float: left;
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+	list-style-image: url("bullet_blue2_n.png"); 
+	width: 180px;
+}
+
+#skills li	{
+	padding: 5px;
+}
+
+abbr	{
+	border-width: 0px;
+}
+
+#experience ul.list1	{
+	float: left;
+	display: inline;
+	margin: 0px 0px 30px 5px;
+	padding: 0px 0px 0px 40px;	
+	list-style-image: url("bullet_blue2_n.png"); 
+	width: 550px;
+}
+
+#experience li	{
+	padding: 5px;
+}
+
+#publications a:link { 
+	text-decoration: underline;
+	color: #000;
+	font-weight: normal;
+}
+
+#publications a:visited { 
+	text-decoration: underline;
+	color: #000;
+	font-weight: normal;
+}
+
+#publications a:hover { 
+	text-decoration: underline;
+	color: #246b00;
+	font-weight: normal;
+}
+
+#publications a:active { 
+	text-decoration: underline;
+	color: #246b00;
+	font-weight: normal;
+}
+
+#publications .link_1 a:link { 
+	text-decoration: underline;
+	color: #246b00;
+	font-weight: normal;
+}
+
+#publications .link_1 a:visited { 
+	text-decoration: underline;
+	color: #246b00;
+	font-weight: normal;
+}
+
+#publications .link_1 a:hover { 
+	text-decoration: underline;
+	color: #000;
+	font-weight: normal;
+}
+
+#publications .link_1 a:active { 
+	text-decoration: underline;
+	color: #000;
+	font-weight: normal;
+}
+
+
+/* Footer
+--------------------------------------------------- */
+
+#footer	{
+	text-align: center;
+	margin: 50px 0px 20px 0px;
+	font-size: 14px;
+}
+
+#footer a	{
+	color: #000;
+}
+
+#footer a:hover	{
+	color: #246b00;
+}
