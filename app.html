@@ -1,4 +1,4 @@
-<!--v201400720-->
+<!--v201400719.1-->
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
@@ -99,7 +99,7 @@ app.factory('Android', function() {
         query_apps:function(callback){
             log('query_apps');
             if(android){
-                var callback_data=android.loadApps();
+                var callback_data=android.get('apps');
                 callback(JSON.parse(callback_data));
             }
         },
