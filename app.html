@@ -81,6 +81,34 @@
                 {{app.name}}
                 </div>
             </div>
+            <div class="box s1x1">
+               <div class="item app_item" ng-click="Upgrade.open()">系统升级</div>
+            </div>
+
+            <!-- Modal -->
+
+            <div class="modal " style="display:block;color:black" ng-show="Upgrade.show()"   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" ng-click="Upgrade.close()"d><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" >桌面升级</h4>
+                  </div>
+                  <div class="modal-body">
+                    升级地址
+                    <input class="form-control" type="text" ng-model="app.url"/>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="Upgrade.close()">Close</button>
+
+                    <button type="button" class="btn btn-primary" ng-click="Upgrade.upgrade()">升级</button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!--end  Modal -->
+
         </div>
     </div>
 
@@ -99,7 +127,7 @@ app.factory('Android', function() {
         query_apps:function(callback){
             log('query_apps');
             if(android){
-                var callback_data=android.get('apps');
+                var callback_data=android.loadApps();
                 callback(JSON.parse(callback_data));
             }
         },
@@ -156,10 +184,24 @@ Controllers.controller('app-controller',['$scope','$http','Android',function($sc
         console.log(day);
         $scope.word=data[day%data.length];
     });
-    var url = "http://gowithwind.github.io/assets/template.json";
-    //$http.jsonp(url).success(function(data){
-    //    console.log('template:',data);
-    //});
+    $scope.app={}
+    $scope.Upgrade={
+        showModal:false,
+        open:function(){
+            if(android){
+                $scope.app.url=android.get("app.url");
+                $scope.app.version=android.get("app.version")
+            }
+            this.showModal=true;
+        },
+        show:function(){
+            return this.showModal;
+        },
+        close:function(){
+            this.showModal=false;
+        }
+
+    }
 
 }]);
 
