@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script>
+    //alert("cnm");
+    </script>
+    <!-- Bootstrap -->
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/colors.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"></link>
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet"></link>
+    <style>
+        body{
+            background-color:#000;
+            color:#fff;
+        }
+        .price{
+            color: red;
+        }
+        .box{
+            text-align: center;
+            font-size:1em;
+            
+            float:left;
+        }
+        .item{
+             background-color:#1BA1E2;
+             margin:2px;
+             height: 96px;
+             padding: 20px;
+             white-space:nowrap;
+             overflow:hidden;
+             text-overflow:ellipsis;
+        }
+        .app_item:hover{
+            margin: 5px;
+        }
+        .s1x1{
+            width:33.3%;
+            height:100px;
+        }
+        .s1x2{
+            width:50%;
+            height:100px;
+        }
+        .s1x3{
+            width:100%;
+            height:100px;
+        }
+        .time{
+            font-size: 2.5em;
+        }
+        .word{
+            font-size: 0.8em;
+            white-space: normal;
+        }
+        bg-cyan{
+            background-color:#D80073; 
+        }
+    </style>
+  </head>
+  <body>
+    <div ng-app="app" class="container-fluid">
+        <div ng-controller="app-controller" class="row">
+            <div class="box s1x3">
+               <div class="item time"  ng-init="status=0" ng-click="status=(status+1)%2">{{time|date: ['short','s'][status]}}</div>
+            </div>
+            <div class="box s1x3" ng-show="word">
+               <div class="item word" ng-style="bg_color(word)">{{word}}</div>
+            </div>
+            <div class="box s1x1">
+               <div class="item time" ng-click="call_phone()">电话</div>
+            </div>
+            <div class="box s1x1"   ng-repeat="app in apps" ng-click="open(app)">
+               <div class="item app_item" ng-style="{'background-color':colors[app.name.length].hex}">
+                {{app.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+var android=android;
+function log(msg){
+    console.log(msg);  
+}
+
+var app = angular.module('app', [
+  'Controllers'
+]);
+
+app.factory('Android', function() {
+    return {
+        query_apps:function(callback){
+            log('query_apps');
+            if(android){
+                var callback_data=android.loadApps();
+                callback(JSON.parse(callback_data));
+            }
+        },
+    };
+});
+
+var Controllers = angular.module('Controllers', []);
+Controllers.controller('app-controller',['$scope','$http','Android',function($scope,$http,Android){
+    $scope.colors=colors;
+
+    $scope.call_phone=function(app){
+        android.call_phone();
+        log('call_phone');
+    }
+    $scope.open=function(app){
+        android.open(app.pkg,app.cls);
+        log(app);
+    }
+
+    $scope.bg_color=function(str){
+        if(str){
+            return {'background-color':colors[str.length].hex}
+        }
+    }
+
+    log("timer");
+    $scope.time=new Date();
+    var timer = setInterval(function(){
+        $scope.time=new Date();
+        $scope.$apply();
+    }, 1000);
+
+    if(android){
+        android.set("sth","just for fun");
+        console.log(android.get("sth"));
+    }
+
+
+    Android.query_apps(function(data){
+            log("callback");
+            //log(data);
+            $scope.apps=[{name:"测试1测试1测试1测试1测试1"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"}];
+            if(android){
+                $scope.apps=data.data;
+            }
+    });
+
+    log("finish");
+    var url = "http://gowithwind.github.io/assets/words.json";
+    $http.jsonp(url).success(function(data){
+        console.log('data:',data);
+        $scope.words=data;
+        var day=new Date().getDay();
+        console.log(day);
+        $scope.word=data[day%data.length];
+    });
+    var url = "http://gowithwind.github.io/assets/template.json";
+    //$http.jsonp(url).success(function(data){
+    //    console.log('template:',data);
+    //});
+
+}]);
+
+</script>
+  </body>
+</html>
