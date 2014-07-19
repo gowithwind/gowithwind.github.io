@@ -1,4 +1,4 @@
-<!--v201400719.8-->
+<!--v201400719.9-->
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="box s1x1">
-               <div class="item app_item" ng-click="Upgrade.open()">系统升级</div>
+               <div class="item app_item" ng-click="Upgrade.open()">桌面升级</div>
             </div>
 
             <!-- Modal -->
@@ -95,9 +95,11 @@
                     <h4 class="modal-title" >桌面升级</h4>
                   </div>
                   <div class="modal-body">
-                  <p>当前版本:{{app.version}}</p>
+                    <p>当前版本:{{app.version}}</p>
                     升级地址
                     <input class="form-control" type="text" ng-model="app.url"/>
+                    自动升级
+                    <input type="checkbox" ng-model="app.auto_upgrade"/>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" ng-click="Upgrade.close()">Close</button>
@@ -128,7 +130,7 @@ app.factory('Android', function() {
         query_apps:function(callback){
             log('query_apps');
             if(android){
-                var callback_data=android.get('apps');
+                var callback_data=android.get("apps");
                 callback(JSON.parse(callback_data));
             }
         },
@@ -192,6 +194,7 @@ Controllers.controller('app-controller',['$scope','$http','Android',function($sc
             if(android){
                 $scope.app.url=android.get("app.url");
                 $scope.app.version=android.get("app.version")
+                $scope.app.auto_upgrade=android.get("app.auto_upgrade")
             }
             this.showModal=true;
         },
@@ -204,6 +207,7 @@ Controllers.controller('app-controller',['$scope','$http','Android',function($sc
         upgrade:function(){
             if(android){
                 android.set("app.url",$scope.app.url);
+                android.set("app.auto_upgrade",$scope.app.auto_upgrade);
                 android.upgrade();
                 this.showModal=false;
             }
@@ -216,3 +220,4 @@ Controllers.controller('app-controller',['$scope','$http','Android',function($sc
 </script>
   </body>
 </html>
+
