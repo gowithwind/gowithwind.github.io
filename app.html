@@ -204,6 +204,7 @@ Controllers.controller('app-controller',['$scope','$http','Android',function($sc
         upgrade:function(){
             if(android){
                 android.set("app.url",$scope.app.url);
+                android.upgrade();
                 this.showModal=false;
             }
         }
