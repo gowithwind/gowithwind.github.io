@@ -87,7 +87,10 @@
             </div>
             </div>
             <div class="box t1x3" ng-show="searching">
-               <div><input type="text" class="search"  ng-focus="searching=true" ng-blur="searching=false" ng-model="keyword" /></div>
+               <div>
+               <input type="text" class="search"  ng-focus="searching=true" ng-blur="searching=false" ng-model="keyword" />
+              <button class="btn">返回</button>
+               </div>
             </div>
             <div class="box s1x1">
                <div class="item time" ng-click="call_phone()">电话</div>
