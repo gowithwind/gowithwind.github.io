@@ -82,12 +82,12 @@
             <div class="box s1x3">
                <div class="item time"  ng-init="status=0" ng-click="status=(status+1)%2">{{time|date: ['short','s'][status]}}</div>
             </div>
-            <div class="box s1x3" ng-show="word">
+            <div class="box s1x3" ng-show="word" ng-click="searching=true">
                <div class="item word" ng-style="bg_color(word)">{{word}}</div>
             </div>
             </div>
-            <div class="box box-filter">
-               <div><input type="text" style="width:100%;height:100%"  ng-focus="searching=true" ng-blur="searching=false" ng-model="keyword" /></div>
+            <div class="box box-filter" ng-show="searching">
+               <div><input type="text" style="width:100%;"  ng-focus="searching=true" ng-blur="searching=false" ng-model="keyword" /></div>
             </div>
             <div class="box s1x1">
                <div class="item time" ng-click="call_phone()">电话</div>
