@@ -98,7 +98,7 @@
                <div class="item time" ng-click="call_phone()">电话</div>
             </div>
             <div class="box s1x1"   ng-repeat="app in apps|filter:keyword" ng-click="open(app)">
-               <div class="item app_item" ng-style="{'background-color':colors[app.name.length].hex}">
+               <div class="item app_item" ng-style="bg_color(app.name)">
                 {{app.name}}
                 </div>
             </div>
