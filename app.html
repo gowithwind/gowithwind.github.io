@@ -78,14 +78,16 @@
   <body>
     <div ng-app="app" class="container-fluid">
         <div ng-controller="app-controller" class="row">
+            <div ng-hide="searching">
             <div class="box s1x3">
                <div class="item time"  ng-init="status=0" ng-click="status=(status+1)%2">{{time|date: ['short','s'][status]}}</div>
             </div>
             <div class="box s1x3" ng-show="word">
                <div class="item word" ng-style="bg_color(word)">{{word}}</div>
             </div>
+            </div>
             <div class="box box-filter">
-               <div><input type="text" class="form-control" ng-model="keyword" /></div>
+               <div><input type="text" style="width:100%"  ng-focus="searching=true" ng-model="keyword" /></div>
             </div>
             <div class="box s1x1">
                <div class="item time" ng-click="call_phone()">电话</div>
