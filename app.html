@@ -105,6 +105,9 @@
             <div class="box s1x1">
                <div class="item app_item" ng-click="Upgrade.open()">桌面升级</div>
             </div>
+            <div class="box s1x1">
+               <div class="item app_item" ng-click="offset=offset+1">变色</div>
+            </div>
 
             <!-- Modal -->
 
@@ -161,7 +164,7 @@ app.factory('Android', function() {
 var Controllers = angular.module('Controllers', []);
 Controllers.controller('app-controller',['$scope','$http','Android',function($scope,$http,Android){
     $scope.colors=colors;
-
+    $scope.offset=0;
     $scope.call_phone=function(app){
         android.call_phone();
         log('call_phone');
@@ -173,7 +176,7 @@ Controllers.controller('app-controller',['$scope','$http','Android',function($sc
 
     $scope.bg_color=function(str){
         if(str){
-            return {'background-color':colors[str.length].hex}
+            return {'background-color':colors[str.length+$scope.offset].hex}
         }
     }
 
