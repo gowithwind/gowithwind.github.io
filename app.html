@@ -97,7 +97,7 @@
             <div class="box s1x1">
                <div class="item time" ng-click="call_phone()" ng-style="bg_color('电话')">电话</div>
             </div>
-            <div class="box s1x1"   ng-repeat="app in apps|filter:keyword" ng-click="open(app)">
+            <div class="box s1x1"   ng-repeat="app in apps|filter:keyword|orderBy:'count'" ng-click="open(app)">
                <div class="item app_item" ng-style="bg_color(app.name)">
                 {{app.name}}
                 </div>
@@ -169,7 +169,16 @@ Controllers.controller('app-controller',['$scope','$http','Android',function($sc
         android.call_phone();
         log('call_phone');
     }
+    
+    $scope.stat=function(app){
+        var count=$scope.app_stats[app.pkg];
+        if(count)count=count+1;
+        else count=1;
+        $scope.app_stats[app.pkg]=count;
+        android.set('app_stats',JSON.stringify($scope.app_stats));
+    }
     $scope.open=function(app){
+        $scope.stat(app);
         android.open(app.pkg,app.cls);
         log(app);
     }
@@ -199,6 +208,15 @@ Controllers.controller('app-controller',['$scope','$http','Android',function($sc
             $scope.apps=[{name:"测试1测试1测试1测试1测试1"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"}];
             if(android){
                 $scope.apps=data.data;
+                
+                var app_stats=JSON.parse(android.get('app_stats'));
+                if(app_stats){
+                  for(var i in $scope.apps){
+                    var app=$scope.apps[i];
+                    app.count=app_stats[app.pkg];
+                  }
+                  $scope.app_stats=app_stats;
+                }
             }
     });
 
