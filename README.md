@@ -12,6 +12,13 @@
 
 github pages + ajax + markdowm
 
+#优点
+
+- 智能一级标题导航
+- 所有文章都用markdown编写
+- ui完全可以自主定制
+- 简单可靠
+
 #缺陷
 
 可能不支持seo
