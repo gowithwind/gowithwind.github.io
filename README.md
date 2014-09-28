@@ -2,7 +2,7 @@
 
 [博客地址](http://gowithwind.github.io/blog/)
 
-[代码地址](https://github.com/gowithwind/gowithwind.github.io/blog)
+[代码地址](https://github.com/gowithwind/gowithwind.github.io/tree/master/blog)
 
 #初心
 
