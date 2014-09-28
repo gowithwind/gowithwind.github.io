@@ -1,4 +1,4 @@
-#Gowithwidn的日志索引
+#Gowithwind的日志索引
 >A strong man can save himself. A great man can save another. 
 
 
