@@ -5,10 +5,18 @@
 
 <div class="container">
   <div class="row">
-    <div id="text"></div>
+  	<div class="col-md-9">
+    	<div id="text"></div>
+    </div>
+    <div class="col-md-3">
+    	<div class="hidden-print hidden-xs hidden-sm" style="position:fixed;top:20px;background:#eee">
+    	  <ul id="nav" class="nav nav-pills nav-stacked" role="tablist" >
+		      <li role="presentation"><a href="index.html">Home</a></li>
+		  </ul>
+		</div>
+    </div>
   </div>
 </div>
-
 
 <!-- code -->
 
@@ -20,6 +28,11 @@ if(post=='')post='index';
 $('#text').html('loading...');
 $.get('posts/'+post+'.md',function(data){
 	$('#text').html(markdown.toHTML(data));
+	var list=$('#nav');
+	$("h1").each(function() {
+        $(this).prepend('<a name="' + $(this).text() + '"></a>');
+        $(list).append('<li role="presentation"><a href="#' + $(this).text() + '">' +  $(this).text() + '</a></li>');
+    });
 });
 </script>
 <script>
