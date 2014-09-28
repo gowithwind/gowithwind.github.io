@@ -1,9 +1,17 @@
-#pigpig
-一个简单的静态文件blog.
-整个思想就是用javascript加载存储在云里的共享文件(markdown格式),用html的方式展现出来.
+#这是我的blog,用于记录我的生活
 
-#博客文件存储
-你可以在index.html 设置共享文件夹的路径,github和dropbox都是支持的.
+[博客地址](http://gowithwind.github.io/blog/)
+[代码地址](https://github.com/gowithwind/gowithwind.github.io/blog)
 
-#模板
-你完全可以自定义模板
+#初心
+
+简单但是可靠
+
+#实现原理
+
+github pages + ajax + markdowm
+
+#缺陷
+
+可能不支持seo
+
