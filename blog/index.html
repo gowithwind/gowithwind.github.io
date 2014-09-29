@@ -4,14 +4,12 @@
 <title>Gowithwind</title>
 <div class="container">
   <div class="row">
-      <div class="col-md-9">
-          <div id="text"></div>
-      </div>
+      <div class="col-md-9"><div id="text"></div></div>
       <div class="col-md-3">
     	  <div class="hidden-print hidden-xs hidden-sm" style="position:fixed;top:20px;background:#eee">
     	     <ul id="nav" class="nav nav-pills nav-stacked" role="tablist" >
 		  <li role="presentation"><a href="index.html">Home</a></li>
-		</ul>
+	     </ul>
 	</div>
     </div>
   </div>
@@ -20,12 +18,14 @@
 <script  src="js/markdown.js"></script>
 <script  src="js/zepto.min.js"></script>
 <script>
+var edit_address="https://github.com/gowithwind/gowithwind.github.io/edit/master/blog/posts/";//define your posts edit address
 var post = window.location.search.substring(1);
 if(post=='')post='index';
 $('#text').html('loading...');
 $.get('posts/'+post+'.md',function(data){
 	$('#text').html(markdown.toHTML(data));
 	var list=$('#nav');
+	$(list).append('<li role="presentation"><a href="' + edit_address+post+ '.md">编辑</a></li>');
 	$("h1").each(function() {
         $(this).prepend('<a name="' + $(this).text() + '"></a>');
         $(list).append('<li role="presentation"><a href="#' + $(this).text() + '">' +  $(this).text() + '</a></li>');
