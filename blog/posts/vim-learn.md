@@ -2,8 +2,8 @@
 >2014/9/11
 
 我素来对键盘操作并不很感冒。今日对vim偶有好感，故入手试下。
->入门参考 http://coolshell.cn/articles/5426.html
-##1 
+>入门参考 <http://coolshell.cn/articles/5426.html>
+#1 模式 
 vim有normal模式和insert模式，一般是在这两者之间切换的。
 
 insert 模式尽量只做插入字符的操作。i是光标前，a是光标后，o是后插入行，O是前插入行。
