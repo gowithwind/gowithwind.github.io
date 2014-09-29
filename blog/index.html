@@ -2,24 +2,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <title>Gowithwind</title>
-
 <div class="container">
   <div class="row">
-  	<div class="col-md-9">
-    	<div id="text"></div>
-    </div>
-    <div class="col-md-3">
-    	<div class="hidden-print hidden-xs hidden-sm" style="position:fixed;top:20px;background:#eee">
-    	  <ul id="nav" class="nav nav-pills nav-stacked" role="tablist" >
-		      <li role="presentation"><a href="index.html">Home</a></li>
-		  </ul>
-		</div>
+      <div class="col-md-9">
+          <div id="text"></div>
+      </div>
+      <div class="col-md-3">
+    	  <div class="hidden-print hidden-xs hidden-sm" style="position:fixed;top:20px;background:#eee">
+    	     <ul id="nav" class="nav nav-pills nav-stacked" role="tablist" >
+		  <li role="presentation"><a href="index.html">Home</a></li>
+		</ul>
+	</div>
     </div>
   </div>
 </div>
-
 <!-- code -->
-
 <script  src="js/markdown.js"></script>
 <script  src="js/zepto.min.js"></script>
 <script>
@@ -35,6 +32,7 @@ $.get('posts/'+post+'.md',function(data){
     });
 });
 </script>
+<!-- stats -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -43,5 +41,4 @@ $.get('posts/'+post+'.md',function(data){
 
   ga('create', 'UA-28936863-2', 'gowithwind.github.io');
   ga('send', 'pageview');
-
 </script>
