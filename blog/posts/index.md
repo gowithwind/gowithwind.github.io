@@ -24,6 +24,6 @@
 
 #链接
 
-##[Follow me on github](https://github.com/gowithwind)
-
+- [Follow me on github](https://github.com/gowithwind)
+- [上传图片到github issues](https://github.com/gowithwind/gowithwind.github.io/issues)
 
