@@ -7,7 +7,7 @@
 
 #butterfly.log
 
-https://github.com/gowithwind/butterfly.log
+<https://github.com/gowithwind/butterfly.log>
 
 之前在新浪的sae上有个博客，自己定制的话，每次都需要改代码，累劫不爱呀。其实我的需求很简单，发布一篇文章，保存即可。然后首页定制方便点。有人说jekyll很好，但我是天生的怕麻烦，配置一套在本地，发布个日志，改动个啥，都需要重新生成，提交，推上。
 
@@ -21,7 +21,7 @@ https://github.com/gowithwind/butterfly.log
 
 #小马输入法
 
-https://github.com/gowithwind/xiaoma
+<https://github.com/gowithwind/xiaoma>
 
 这个轮子有点玩票的性质，毕竟做好一个输入法，最核心的元素之一在词库上，这是我个人无力解决的。不过，这个轮子的价值在于，你可以完全通过html来定制你的界面，想用什么符号，放在哪，都听您的呐，大爷。前提是大爷，你会点web技术啦。
 
