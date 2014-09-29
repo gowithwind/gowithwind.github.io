@@ -26,5 +26,5 @@
 
 - [Follow me on github](https://github.com/gowithwind)
 - [上传图片到github issues](https://github.com/gowithwind/gowithwind.github.io/issues)
-- [新的文章](https://github.com/gowithwind/gowithwind.github.io/new/master/blog)
+- [新的文章](https://github.com/gowithwind/gowithwind.github.io/new/master/blog/posts)
 
