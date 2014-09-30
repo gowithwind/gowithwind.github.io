@@ -1,5 +1,6 @@
 >最近创造力爆发了，两三个小时写了个标记github代码的插件，欢迎提意见，感谢avos，感谢chrome，香港加油。
-<https://github.com/gowithwind/github.marker>
+
+代码地址 <https://github.com/gowithwind/github.marker>
 
 github.marker 
 =============
