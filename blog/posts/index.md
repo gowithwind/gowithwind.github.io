@@ -4,6 +4,7 @@
 ##在深圳的pythoner [我的简历 2014/9/28](index.html?resume)
 
 
+
 #技术
 + [github marker](index.html?github-marker)
 + [造轮子](index.html?zao-lun-zi)
@@ -22,6 +23,8 @@
 + [待迁移](index.html?vim-learn)
 
 #生活
+
+<iframe src="http://ghbtns.com/github-btn.html?user=gowithwind&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe>
 
 #开源项目
 - [github blog butterfly](https://github.com/gowithwind/butterfly.log)
