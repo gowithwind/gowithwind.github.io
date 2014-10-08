@@ -34,6 +34,7 @@
  4. 实现网页版电影票以及微信公众账号服务等业务
 
 主要技术指标
+
  - 后台技术栈 python+django+java+memcached，对app客户端，web端提供统一的thrift api。
  - 前端技术栈 jquery+bootstrap
  
