@@ -1,8 +1,7 @@
 #Gowithwind的日志索引
 >A strong man can save himself. A great man can save another. 
 
-
-##[我的简历 2014/9/28](index.html?resume)
+##在深圳的pythoner [我的简历 2014/9/28](index.html?resume)
 
 
 #技术
@@ -23,6 +22,13 @@
 + [待迁移](index.html?vim-learn)
 
 #生活
+
+#开源项目
+- [github blog butterfly](https://github.com/gowithwind/butterfly.log)
+- [xiaoma android输入法](https://github.com/gowithwind/xiaoma)
+- [nano proxy 极简http代理](https://github.com/gowithwind/nano-proxy)
+- [github marker 代码注释chrome扩展](https://github.com/gowithwind/github.marker)
+- 更多正在准备中
 
 #链接
 
