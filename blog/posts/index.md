@@ -1,7 +1,7 @@
 #Gowithwind的日志索引
 >A strong man can save himself. A great man can save another. 
 
-##在深圳的Pythoner [我的简历,Hire me ! 2014/10/8](index.html?resume)
+##在深圳的Pythoner [我的简历 Hire me ! 2014/10/8](index.html?resume)
 
 
 
@@ -30,7 +30,7 @@
 - [xiaoma android输入法](https://github.com/gowithwind/xiaoma)
 - [nano proxy 极简http代理](https://github.com/gowithwind/nano-proxy)
 - [github marker 代码注释chrome扩展](https://github.com/gowithwind/github.marker)
-- 更多正在准备中
+- 更多项目正在筹备中
 
 #链接
 
