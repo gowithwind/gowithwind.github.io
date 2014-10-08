@@ -24,7 +24,6 @@
 
 #生活
 
-<iframe src="http://ghbtns.com/github-btn.html?user=gowithwind&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe>
 
 #开源项目
 - [github blog butterfly](https://github.com/gowithwind/butterfly.log)
