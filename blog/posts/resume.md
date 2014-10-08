@@ -22,6 +22,7 @@
  - 免费wifi管理系统
 
 主要技术指标
+
  - 支撑日用户规模数十万，日广告展示次数百万
  - 后端技术栈 python+tornado+redis+mysql+restful
  - 前端技术栈 angularjs+bootstrap
