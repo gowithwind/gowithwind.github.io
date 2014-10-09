@@ -1,7 +1,9 @@
 #Gowithwind的日志索引
 >A strong man can save himself. A great man can save another. 
 
-##在深圳的Pythoner [我的简历 Hire me ! 2014/10/8](index.html?resume)
+在深圳的Pythoner，喜欢鼓捣新东西
+
+[我的简历 Hire me ! 2014/10/8](index.html?resume)
 
 
 
