@@ -8,6 +8,7 @@
 
 
 #技术
++ [圆验证](index.html?yuan)
 + [github marker](index.html?github-marker)
 + [造轮子](index.html?zao-lun-zi)
 + [tornado热部署](index.html?tornado-hot-deploy)
