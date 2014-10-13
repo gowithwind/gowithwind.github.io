@@ -3,6 +3,9 @@ Yuan 圆验证
 
 基于旋转圆形图片方向的验证码 
 
+[demo](http://gowithwind.github.io/yuan/)
+[代码](https://github.com/gowithwind/yuan)
+
 ![img](http://gowithwind.github.io/yuan/img/60.png)
 ![input3](https://cloud.githubusercontent.com/assets/2367339/4610330/49cb6738-52ae-11e4-99e0-19a055d75c43.gif)
 #初心
