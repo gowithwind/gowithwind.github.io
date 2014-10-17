@@ -31,6 +31,7 @@
 
 
 #开源项目
+- [angular exchange rate 汇率](http://gowithwind.github.io/tool/exchange.html)
 - [github blog butterfly](https://github.com/gowithwind/butterfly.log)
 - [xiaoma android输入法](https://github.com/gowithwind/xiaoma)
 - [nano proxy 极简http代理](https://github.com/gowithwind/nano-proxy)
