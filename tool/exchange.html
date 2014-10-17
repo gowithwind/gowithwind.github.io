@@ -1,0 +1,121 @@
+<!doctype html>
+<html ng-app="App">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Angular Exchange</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+	body {font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;background: #DBD3D8;}
+	h1{border-left: 10px solid #7fc042;padding-left: 20px;}
+	</style>
+  </head>
+<body>
+<div class="container">
+  <div class="row"  style="background: #FFFFFF;">
+  	<div class="col-md-12">
+      <div id="text" ng-controller="Controller">
+      	<h1>Angular Exchange Rate (CNY)</h1>
+      	<input class="form-control" type="text"  ng-model="amount" ng-init="amount=100" />
+      	<br>
+      	<table class="table table-striped">
+      		<tr><th>Exchange</th><th>Rate</th><th>Forward</th><th>1/Rate</th><th>Reverse</th></th>
+      		<tr ng-repeat="rate in rates">
+      			<td>{{rate.Name}}<br>{{Currencies[rate.from]}} - {{Currencies[rate.to]}}</td>
+      			<td>{{rate.Rate}}</td>
+      			<td>{{rate.Rate*amount |currency}}</td>
+      			<td>{{(1/rate.Rate).toFixed(4)}}</td>
+      			<td>{{amount/rate.Rate |currency}}</td>
+      		</tr>
+      	</table>
+      	<table class="table table-striped">
+      		<tr><th>Product</th><th>price</th><th>currency</th><th>currency</th></tr>
+      		<tr ng-repeat="product in products" ng-click="cal(product)" >
+      			<td>{{product.name}}</td>
+      			<td>{{product.price}}</td>
+      			<td>{{product.currency}}</td>
+      			<td>{{Currencies[product.currency]}}</td>
+      			<td></td>
+      		</tr>
+      	</table>
+      	<p>Baby has born {{day}} day!!!</p>
+      </div>
+
+      <div>
+	      <div class="" ng-click="show=!show" ng-init="show=false">展开评论</div>
+	      <div id="disqus_thread" class="hidden-print" ng-show="show"></div>
+	  </div>
+    </div>
+  </div>
+</div>
+<a class="hidden-print" href="https://github.com/gowithwind"><img style="position: absolute; z-index:-1;top: 0; left: 0; border: 0;" src="" alt="Fork me on GitHub"></a>
+<!-- code -->
+<script src="js/angular.min.js"></script>
+<script>
+angular.module('App', [])
+  .controller('Controller', ['$scope', '$http',function($scope,$http) {
+  	$scope.Currencies={
+  		'CNY':'人民币',
+  		'USD':'美元',
+  		'HKD':'港元',
+  		'TWD':'台币',
+  		'JPY':'日本',
+  		'KRW':'韩国',
+  		'EUR':'欧元',
+  	}
+  	$scope.products=[
+  		{name:'Macbook air 11',price:899,currency:'USD'},
+  		{name:'Macbook air 13',price:1099,currency:'USD'},
+  		{name:'Macbook pro 13',price:1299,currency:'USD'},
+  	]
+  	var base='CNY';
+  	var q='';
+  	for(var c in $scope.Currencies){
+  		q+='%22'+c+base+'%22'+'%2C'
+  		console.log(q);
+  	}
+  	q=q.slice(0,-3);
+    $http.get('https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20('+q+')&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=')
+    	.success(function(data){
+    		var rates=data.query.results.rate;
+    		for(var i in rates){
+    			var rate=rates[i];
+    			rate.from=rate.id.slice(0,3);
+    			rate.to=rate.id.slice(3);
+    		}
+    		$scope.rates=rates;
+    		console.log(rates);
+    	});
+
+   	$scope.cal=function(product){
+   		$scope.amount=product.price;
+   	}
+
+   	$scope.day=(((new Date())-(new Date('2014-05-23')))/(24*60*60*1000)).toFixed(0);
+  }]);
+</script>
+<!-- stats -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52511362-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- comments -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gowithwind'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+</body>
+</html>
