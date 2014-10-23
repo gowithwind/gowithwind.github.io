@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<textarea id="code" style="width:100%;height:300px">
+alert("hello");
+</textarea>
+<button onclick="run()">run</button>
+<p id="oneline"></p>
+<script>
+function run(){
+	source=document.getElementById('code').value;
+	oneline=source.split('\n').join('');
+	document.getElementById('oneline').innerText='javascript:'+oneline;
+	eval(source);
+}
+</script>
