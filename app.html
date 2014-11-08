@@ -179,9 +179,9 @@ Controllers.controller('app-controller',['$scope','$http','Android',function($sc
     }
     $scope.open=function(app){
         //$scope.stat(app);
+        android.open(app.pkg,app.cls);
         if(!app.count)app.count=0;
         app.count+=1;
-        android.open(app.pkg,app.cls);
         log(app);
     }
 
