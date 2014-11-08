@@ -210,15 +210,12 @@ Controllers.controller('app-controller',['$scope','$http','Android',function($sc
             $scope.apps=[{name:"测试1测试1测试1测试1测试1"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"},{name:"测试2"}];
             if(android){
                 $scope.apps=data.data;
-                /*
-                var app_stats=JSON.parse(android.get('app_stats'));
-                if(app_stats){
+        
                   for(var i in $scope.apps){
                     var app=$scope.apps[i];
-                    app.count=app_stats[app.pkg];
+                    app.count=0;
                   }
-                  $scope.app_stats=app_stats;
-                }*/
+
             }
     });
 
