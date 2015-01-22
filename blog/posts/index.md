@@ -8,6 +8,7 @@
 
 
 #技术
++ [tornado和wsgi互操作](index.html?wsgi)
 + [并不神奇,flask的route解析(装饰器)](index.html?flask1)
 + [从索引谈起](index.html?about-index)
 + [打包python app 到docker容器](index.html?python-docker)
