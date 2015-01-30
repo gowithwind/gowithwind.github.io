@@ -8,6 +8,7 @@
 
 
 #技术
++ [未来手机长什么样 2020](index.html?mobile)
 + [nginx的110错误和111错误](index.html?nginx)
 + [tornado和wsgi互操作](index.html?wsgi)
 + [并不神奇,flask的route解析(装饰器)](index.html?flask1)
