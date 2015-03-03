@@ -7,14 +7,23 @@
 1. pip install -r requestments.txt
 1. pip install supervisor
 1. 编写nginx配置文件,并链接到/etc/nginx/site-enabled
+1. echo_supervisord_conf >super.conf
+1. 编辑super.conf 添加应用配置内容
+1. supervisord -c super.conf
+1. nginx -s reload
 
+部署完成
+
+
+#样例
+nginx app 配置
 
     upstream frontends {
-    server 127.0.0.1:1234; #supervisor¿ØÖÆµÄÓòÃû
+    server 127.0.0.1:1234; 
     }
     server {
-    listen 80;  #¼àÌý¶Ë¿Ú
-    server_name low-poly.1day1app.com;
+    listen 80; 
+    server_name **.***.com;
     location / {
         proxy_read_timeout 1800;
         proxy_pass_header Server;
@@ -26,9 +35,7 @@
     }
     }
 
-1. echo_supervisord_conf >super.conf
-1. 编辑super.conf 添加应用配置内容
-
+super.conf
 
     [program:tornado_app]
     command=python app.py --port=1234
@@ -38,8 +45,3 @@
     autorestart=true
     stdout_logfile=/var/log/app.log
     stderr_logfile=/var/log/app.err
-
-1. supervisord -c super.conf
-1. nginx -s reload
-
-部署完成
