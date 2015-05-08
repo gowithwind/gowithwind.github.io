@@ -8,6 +8,7 @@
 
 
 #技术
++ [tornado的重启原理](index.html?reload)
 + [android web view open file not working](index.html?webview)
 + [部署tornado应用 supervisor nginx](index.html?deploy-app)
 + [未来手机长什么样 2020](index.html?mobile)
