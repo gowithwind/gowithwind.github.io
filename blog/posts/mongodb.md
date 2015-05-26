@@ -1,6 +1,6 @@
 #mongodb基本使用
 
-##安装
+#安装
 
 1. sudo apt-get install -y mangodb
 1. service mangodb start
