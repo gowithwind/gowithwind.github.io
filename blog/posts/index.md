@@ -8,6 +8,7 @@
 
 
 #技术
++ [mongodb基本使用](index.html?mongodb)
 + [tornado的重启原理](index.html?reload)
 + [android web view open file not working](index.html?webview)
 + [部署tornado应用 supervisor nginx](index.html?deploy-app)
