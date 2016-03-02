@@ -1,0 +1,31 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>数据列求差圣母</title>
+<style>
+textarea{
+	width: 100%;
+	height: 50em;
+}
+</style>
+<table width="100%">
+<tr><h3>数据列求差圣母--忽略大小写,不支持ie9以下ie浏览器</h3></tr>
+<tr>
+<td>A</td><td>B</td><td><button id='btn' onclick='execute()'>求差 A-B=C</button></td>
+</tr>
+<tr>
+<td><textarea id='A'></textarea></td>
+<td><textarea id='B'></textarea></td>
+<td><textarea id='C'></textarea></td>
+</tr>
+</table>
+<script>
+Array.prototype.diff = function(a) {
+    return this.filter(function(i) {return a.indexOf(i) < 0;});
+};
+function execute(){
+	data1 =document.getElementById('A').value.toLowerCase();
+	data2 =document.getElementById('B').value.toLowerCase();
+	rows1=data1.split('\n');
+	rows2=data2.split('\n');
+	document.getElementById('C').value=rows1.diff(rows2).join('\n');
+}
+</script>
