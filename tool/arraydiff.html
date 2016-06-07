@@ -9,7 +9,8 @@ textarea{
 <table width="100%">
 <tr><h3>数据列求差圣母--忽略大小写,不支持ie9以下ie浏览器</h3></tr>
 <tr>
-<td>A</td><td>B</td><td><button id='btn' onclick='execute()'>求差 A-B=C</button></td>
+<td>A</td><td>B</td><td><button id='btn' onclick='execute()'>求差 A-B=C</button>
+<button id='btn' onclick='execute1()'>求差 B-A=C</button></td>
 </tr>
 <tr>
 <td><textarea id='A'></textarea></td>
@@ -24,6 +25,14 @@ Array.prototype.diff = function(a) {
 function execute(){
 	data1 =document.getElementById('A').value.toLowerCase();
 	data2 =document.getElementById('B').value.toLowerCase();
+	rows1=data1.split('\n');
+	rows2=data2.split('\n');
+	document.getElementById('C').value=rows1.diff(rows2).join('\n');
+}
+
+function execute1(){
+	data1 =document.getElementById('B').value.toLowerCase();
+	data2 =document.getElementById('A').value.toLowerCase();
 	rows1=data1.split('\n');
 	rows2=data2.split('\n');
 	document.getElementById('C').value=rows1.diff(rows2).join('\n');
